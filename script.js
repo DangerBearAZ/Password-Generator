@@ -1,6 +1,7 @@
 // Assignment code here
 
-document.querySelector("#generate").addEventListener("click", writePassword);
+var generateBtn = document.querySelector("#generate").addEventListener("click", writePassword);
+
 
 
 //STEP ONE SET UP VERIABLES 
@@ -59,7 +60,6 @@ var passwordIs = [];
   
 }
 
-console.log(passwordIs)
 
 var randomPassword = ""
 
@@ -68,26 +68,17 @@ for (var i = 0; i < confirmLength; i++) {
  console.log(randomPassword);
 }
 return randomPassword;
-
-};
-
-generate();
-
-// Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
+}
 
 // Write password to the #password input
 function writePassword() {
-var password = generatePassword();
+var password = generate();
 var passwordText = document.querySelector("#password");
-passwordText.textContent = randomPassword
+passwordText.textContent = randomPassword;
 
-  passwordText.value = password;
-  var password = generate();
-  var passwordText = document.querySelector( "#password")
-
-
+password.text.value = password;
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+//generateBtn.addEventListener("click", writePassword);
+
